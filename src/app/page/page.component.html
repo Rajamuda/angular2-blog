@@ -1,0 +1,40 @@
+<div *ngIf="pageValid">
+	<div *ngIf="pageName=='about'">
+		<article class="blog-post">
+		    <header>
+		        <h1>Tentang Saya</h1>
+		        <div class="clearfix"></div>
+		        <div class="lead-image" style="text-align:center">
+		            <img src="http://kingofwallpapers.com/anon/anon-008.jpg" alt="Me" class="img-responsive">
+		        </div>
+		    </header>
+		    <div class="body">
+		    	<p>Halo semua, perkenalkan saya Fadhlal Khaliq Surado. Saya sekarang sedang menempuh studi di Ilmu Komputer IPB. Saat ini saya sudah mencapai semester 6. Di Ilmu Komputer sendiri saya mencoba untuk fokus ke ranah <i>Web Developing</i>. Sampai saat ini saya sudah mencoba beberapa komponen web, bahasa pemrograman, dan <i>framework</i>, di antaranya:	</p>
+		    	<ul>
+		    		<li>PHP
+		    			<ul>
+		    				<li>Native (5.6 / 7.0)</li>
+		    				<li>Laravel 5</li>
+		    				<li>Codeigniter (tidak semua)</li>
+		    			</ul>
+		    		</li>
+		    		<li>JavaScript
+			    		<ul>
+			    			<li>Native (tidak semua)</li>
+			    			<li>jQuery</li>
+			    			<li>Angular 2</li>
+			    		</ul>
+		    		</li>
+		    		<li>MySQL (MariaDB)</li>
+		    		<li>CSS (with Bootstrap)</li>
+		    		<li>HTML 5</li>
+		    	</ul>
+
+		    </div>
+		</article>
+	</div>
+</div>
+
+<h1 *ngIf="!pageValid">
+	Not Valid
+</h1>

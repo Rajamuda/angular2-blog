@@ -1,0 +1,39 @@
+<div *ngIf="!posts">
+	<div class="loader">
+		<img src="../assets/images/spinner.gif"/>
+	</div>
+</div>
+<div *ngIf="noconnection">
+	<div class="alert alert-danger"><i class="fa fa-times-circle"></i> Terjadi Kesalahan! Gagal mengambil data dari server. Coba muat kembali halaman ini.</div>
+</div>
+
+<div *ngIf="!notfound">
+<article class="blog-post" *ngFor="let post of posts">
+    <header>
+        <h1>{{post.judul_post}}</h1>
+        <div class="clearfix"></div>
+        <div class="lead-image">
+            <img src="{{post.foto}}" alt="{{post.judul_post}}" class="img-responsive">
+            <div class="meta clearfix">
+                <div class="date">
+                    <i class="fa fa-calendar"></i>
+                    <span class="data">{{post.tanggal_post}}</span>
+                </div>
+                <div class="comments">
+                    <i class="fa fa-list"></i>
+                    <span class="data">
+                    	<span *ngFor="let cat of post.kategori; let j=index; let last = last">
+											 	<a routerLink="/category/{{post.id_kategori[j]}}" class="post-link">{{cat}}</a><span *ngIf="!last">, </span>
+											</span>
+                    </span>
+                </div>                                
+            </div>
+        </div>
+    </header>
+    <div class="body" [innerHtml]="post.isi_post"></div>
+</article>
+</div>
+
+<div *ngIf="notfound">
+	<h2>Post not Exist</h2>
+</div>

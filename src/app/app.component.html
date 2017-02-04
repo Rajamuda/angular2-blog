@@ -1,3 +1,85 @@
-<h1>
-  {{title}}
-</h1>
+<ng2-slim-loading-bar class="load-bar" [height]="'4px'"></ng2-slim-loading-bar>
+<header>
+  <div class="widewrapper masthead">
+      <div class="container">
+          <a routerLink="/home" id="logo">
+              Rajamuda
+              <!--Use the following line instead if you want to use an image logo-->
+              <!--<img src="img/tales-logo.png" alt="Tales Blog">-->
+          </a>
+      </div>
+  </div>
+  <nav [class.navbar-fixed-top]="navIsFixed">
+  <div class="widewrapper subheader">
+      <div class="container">
+          <div id="mobile-nav-toggle" style="float:left; padding-top: 7px;">
+              <a data-toggle="collapse" data-target=".tales-nav .navbar-collapse">
+                  <i class="fa fa-bars"></i>
+              </a>
+          </div> 
+
+           <div class="tales-searchbox">
+              <form #searchForm="ngForm" accept-charset="utf-8">
+                  <button class="searchbutton" type="submit" (click)="onSearch(searchForm)">
+                      <i class="fa fa-search"></i>
+                  </button>
+                  <input [(ngModel)]="search.data" class="searchfield" name="searchbox" type="text" placeholder="Search">
+              </form>
+          </div>
+
+          <nav class="tales-nav" style="float:left;">
+                <div class="collapse navbar-collapse">
+                  <ul class="nav nav-pills navbar-nav">
+                    
+                      <li routerLinkActive="active">
+                          <a routerLink="/home">Beranda</a>
+                      </li>
+                      <li routerLinkActive="active">
+                          <a routerLink="/page/about">Tentang</a>
+                      </li>
+                      <li>
+                          <a href="#">Kontak</a>
+                      </li>                        
+                  </ul>
+              </div>
+          </nav>   
+
+      </div>
+  </div>
+  </nav>
+</header>
+
+  <div class="widewrapper main">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-8 blog-main">
+              <!-- <div class="row"> -->
+                  <router-outlet></router-outlet>
+              <!-- </div> -->
+          </div>
+          <aside class="col-md-4 blog-aside">
+              <div class="aside-widget">
+                  <header>
+                      <h3>Kategori</h3>
+                  </header>
+                  <div class="body clearfix">
+                      <ul class="tags">
+                          <div *ngIf="!categories" style="text-align: center"><img src="../assets/images/spinner.gif"></div>
+                          <li *ngFor="let category of categories">
+                            <a routerLink="/category/{{category.id}}">{{category.name}}</a>
+                          </li>                           
+                      </ul>
+                  </div>
+              </div>
+          </aside>
+      </div>
+  </div>
+</div>
+
+<footer>
+  <div class="widewrapper copyright">
+      <div class="container">
+          &copy; 2017 | <b>Fadhlal Khaliq Surado</b>
+      </div>
+  </div>
+</footer>
