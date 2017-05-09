@@ -21,13 +21,12 @@ import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 const appRoutes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
-  {path: 'home', redirectTo: '/home', pathMatch: 'full'},
-  {path: 'page/:id', component: PageComponent},
-  {path: 'page/:id', redirectTo: '/page/:id', pathMatch: 'full'},
+  //{path: 'home', redirectTo: '/home', pathMatch: 'full'  {path: 'page/:id', component: PageComponent},
+  //{path: 'page/:id', redirectTo: '/page/:id', pathMatch: 'full'},
   {path: 'post/:id', component: PostComponent},
-  {path: 'post/:id', redirectTo: '/post/:id', pathMatch: 'full'},
+  //{path: 'post/:id', redirectTo: '/post/:id', pathMatch: 'full'},
   {path: 'category/:id', component: CategoryComponent},
-  {path: 'category/:id', redirectTo: '/category/:id', pathMatch: 'full'},
+  //{path: 'category/:id', redirectTo: '/category/:id', pathMatch: 'full'},
   {path: 'search/:term', component: SearchComponent},
   // {path: 'search/:term', redirectTo: '/search'}
   // { path: '**', component: PageNotFoundComponent }
